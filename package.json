@@ -1,0 +1,26 @@
+{
+  "name": "deviniter_cli",
+  "bin": {
+    "cli": "./dist/index.js"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "link-cli": "pnpm --global unlink deviniter_cli && pnpm --global link deviniter_cli",
+    "dev": "tsc -w",
+    "build": "tsc"
+  },
+  "author": "Peter Pham",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@types/node": "^22.7.5"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module"
+}
