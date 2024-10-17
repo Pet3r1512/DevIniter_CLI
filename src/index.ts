@@ -39,7 +39,6 @@ export async function init() {
 
     fs.copySync(templatePath, projectPath);
 
-    // Read package.json from the template to get dependencies
     const packageJsonPath = path.join(projectPath, "package.json");
     const packageJson = fs.readJsonSync(packageJsonPath);
     const dependencies = packageJson.dependencies || {};
