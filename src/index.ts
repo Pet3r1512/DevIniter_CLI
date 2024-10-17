@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import inquirer from "inquirer";
-import path from "path";
+import path from "node:path";
 import fs from "fs-extra";
 import { execaCommandSync } from "execa";
 import { fileURLToPath } from "url";
