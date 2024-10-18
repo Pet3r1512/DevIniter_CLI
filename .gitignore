@@ -1,2 +1,7 @@
 node_modules
 dist
+
+
+# ignore all template's lock file
+templates/**/pnpm-lock.yaml
+templates/**/package-lock.yaml

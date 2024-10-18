@@ -5,7 +5,7 @@ import IndexPage from "./index";
 describe("Index Page", () => {
   it("should render Hi text", () => {
     render(<IndexPage />);
-    const hiText = screen.getByText("Starter Template");
-    expect(hiText).toBeInTheDocument();
+    const starterText = screen.getByText("Starter Template");
+    expect(starterText).toBeInTheDocument();
   });
 });

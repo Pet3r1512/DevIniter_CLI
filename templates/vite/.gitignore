@@ -29,3 +29,5 @@ coverage
 # Generated files
 public/mockServiceWorker.js
 .vitest-preview
+
+pnpm-lock.yaml
