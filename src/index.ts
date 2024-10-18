@@ -5,10 +5,13 @@ import path from "node:path";
 import fs from "fs-extra";
 import { execaCommandSync } from "execa";
 import { fileURLToPath } from "url";
+import getTemplates from "./scan_templates.ts";
+
+const templates = getTemplates();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const templateDirectory = path.join(__dirname, "../templates");
+export const templateDirectory = path.join(__dirname, "../templates");
 
 export function scaffoldTemplate(projectName: string, template: string) {
   const projectPath = path.join(process.cwd(), projectName);
@@ -49,7 +52,7 @@ export async function init() {
         type: "list",
         name: "template",
         message: "Choose a template: ",
-        choices: ["Nextjs", "Vite"],
+        choices: templates,
       },
     ]);
 
