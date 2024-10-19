@@ -3,8 +3,8 @@
   "display": "Node LTS",
   "_version": "20.1.0",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "Node16",
+    "target": "esnext",
+    "module": "node16",
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
