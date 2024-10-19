@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import inquirer from "inquirer";
 import path from "node:path";
 import fs from "fs-extra";
