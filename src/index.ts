@@ -1,13 +1,9 @@
-#!/usr/bin/env node
-
 import inquirer from "inquirer";
-import path from "node:path";
+import path from "path";
 import fs from "fs-extra";
 import { execaCommandSync } from "execa";
 import { fileURLToPath } from "url";
-import getTemplates from "./scan_templates.ts";
-
-const templates = getTemplates();
+import { scanTemplates } from "./scan_templates.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,15 +18,6 @@ export function scaffoldTemplate(projectName: string, template: string) {
 
   fs.copySync(templatePath, projectPath);
 
-  const packageJsonPath = path.join(projectPath, "package.json");
-  const packageJson = fs.readJsonSync(packageJsonPath);
-  const dependencies = packageJson.dependencies || {};
-  const devDependencies = packageJson.devDependencies || {};
-
-  console.log("These packages will be installed:");
-  console.log("Dependencies:", Object.keys(dependencies).join(", "));
-  console.log("DevDependencies:", Object.keys(devDependencies).join(", "));
-
   execaCommandSync("npm install", { cwd: projectPath, stdio: "inherit" });
 
   console.log(
@@ -42,6 +29,7 @@ export function scaffoldTemplate(projectName: string, template: string) {
 
 export async function init() {
   try {
+    const templates = scanTemplates();
     const answers = await inquirer.prompt([
       {
         type: "input",
