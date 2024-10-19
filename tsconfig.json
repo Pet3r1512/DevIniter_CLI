@@ -3,17 +3,16 @@
   "display": "Node LTS",
   "_version": "20.1.0",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "Node16",
     "outDir": "./dist",
-    "lib": ["es2023"],
-    "module": "node16",
-    "target": "es2022",
+    "rootDir": "./src",
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noUncheckedIndexedAccess": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "node16",
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    "moduleResolution": "node16"
   },
-  "include": ["src"]
+  "include": ["./src/**/*.ts"]
 }
