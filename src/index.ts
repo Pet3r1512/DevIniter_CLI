@@ -1,9 +1,10 @@
 import inquirer from "inquirer";
-import path from "path";
+import path from "node:path";
 import fs from "fs-extra";
 import { execaCommandSync } from "execa";
-import { fileURLToPath } from "url";
+import { fileURLToPath } from "node:url";
 import { scanTemplates } from "./scan_templates.js";
+import ora from "ora";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,16 +14,20 @@ export function scaffoldTemplate(projectName: string, template: string) {
   const projectPath = path.join(process.cwd(), projectName);
   const templatePath = path.join(templateDirectory, template);
 
-  console.log(`Project path: ${projectPath}`);
-  console.log(`Template path: ${templatePath}`);
+  const spinner = ora("Installing template...").start();
 
-  fs.copySync(templatePath, projectPath);
+  try {
+    fs.copySync(templatePath, projectPath);
 
-  execaCommandSync("npm install", { cwd: projectPath, stdio: "inherit" });
+    execaCommandSync("npm install", { cwd: projectPath, stdio: "inherit" });
 
-  console.log(
-    `Project ${projectName} created successfully using ${template} template 🚀.`
-  );
+    spinner.succeed(
+      `Project ${projectName} created successfully using ${template} template 🚀.`
+    );
+  } catch (error) {
+    spinner.fail("Failed to install template.");
+    console.error(error);
+  }
 
   return true;
 }
