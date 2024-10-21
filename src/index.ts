@@ -90,9 +90,9 @@ export async function init() {
       throw new Error("No answers received from inquirer prompt.");
     }
 
-    directoryCheck(answers);
-
-    scaffoldTemplate(answers.projectName, answers.template.toLowerCase());
+    if ((await directoryCheck(answers)) === true) {
+      scaffoldTemplate(answers.projectName, answers.template.toLowerCase());
+    }
   } catch (error) {
     console.error("Error during initialization: ", error);
   }
