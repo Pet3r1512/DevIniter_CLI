@@ -8,6 +8,8 @@ import { fileURLToPath } from "node:url";
 import { scanTemplates } from "./scan_templates.js";
 import ora from "ora";
 
+const DEFAULT_TEMPLATES = ["nextjs", "vite"];
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 export const templateDirectory = path.join(__dirname, "../templates");
@@ -74,7 +76,7 @@ export async function init() {
   try {
     // In case templates can not be scanned automactically, we can provide a default list of templates
     const templates =
-      scanTemplates().length > 0 ? scanTemplates() : ["nextjs", "vite"];
+      scanTemplates().length > 0 ? scanTemplates() : DEFAULT_TEMPLATES;
     const answers = await inquirer.prompt([
       {
         type: "input",
