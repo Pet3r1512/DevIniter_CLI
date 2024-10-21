@@ -26,9 +26,10 @@ export function scaffoldTemplate(projectName: string, template: string) {
     spinner.succeed(
       `Project ${projectName} created successfully using ${template} template 🚀.`
     );
-  } catch (error) {
+  } catch (error: Error | any) {
     spinner.fail("Failed to install template.");
-    console.error(error);
+    console.error(error.message);
+    process.exit(1);
   }
 
   return true;
@@ -71,7 +72,9 @@ export async function checkAllowToInstall(answers: {
 
 export async function init() {
   try {
-    const templates = scanTemplates();
+    // In case templates can not be scanned automactically, we can provide a default list of templates
+    const templates =
+      scanTemplates().length > 0 ? scanTemplates() : ["nextjs", "vite"];
     const answers = await inquirer.prompt([
       {
         type: "input",
@@ -86,6 +89,8 @@ export async function init() {
       },
     ]);
 
+    const { projectName, template } = answers;
+
     if (!answers) {
       throw new Error("No answers received from inquirer prompt.");
     }
@@ -96,9 +101,10 @@ export async function init() {
       throw new Error("Directory is not empty.");
     }
 
-    scaffoldTemplate(answers.projectName, answers.template.toLowerCase());
-  } catch (error) {
-    console.error("Error during initialization: ", error);
+    scaffoldTemplate(projectName, template.toLowerCase());
+  } catch (error: Error | any) {
+    console.error("Error during initialization: ", error.message);
+    process.exit(1);
   }
 }
 
