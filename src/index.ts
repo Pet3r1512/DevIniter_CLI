@@ -31,7 +31,7 @@ export function scaffoldTemplate(projectName: string, template: string) {
   } catch (error) {
     spinner.fail("Failed to install template.");
     console.error((error as Error).message);
-    process.exit(1);
+    throw error;
   }
 
   return true;
@@ -106,8 +106,15 @@ export async function init() {
     scaffoldTemplate(projectName, template.toLowerCase());
   } catch (error) {
     console.error("Error during initialization: ", (error as Error).message);
-    process.exit(1);
+    throw error;
   }
 }
 
-init();
+async () => {
+  try {
+    await init();
+  } catch (error) {
+    console.error("Error: ", (error as Error).message);
+    process.exit(1);
+  }
+};
