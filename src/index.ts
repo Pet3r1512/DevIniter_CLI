@@ -57,7 +57,9 @@ export async function directoryCheck(answers: {
     if (action === "cancel") {
       console.log("Installation cancelled.");
       return;
-    } else if (action === "remove") {
+    }
+
+    if (action === "remove") {
       fs.emptyDirSync(projectPath);
     }
   }
