@@ -110,11 +110,7 @@ export async function init() {
   }
 }
 
-async () => {
-  try {
-    await init();
-  } catch (error) {
-    console.error("Error: ", (error as Error).message);
-    process.exit(1);
-  }
-};
+init().catch((error) => {
+  console.error("Error: ", (error as Error).message);
+  process.exit(1);
+});
