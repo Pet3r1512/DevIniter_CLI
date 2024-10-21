@@ -34,7 +34,7 @@ export function scaffoldTemplate(projectName: string, template: string) {
   return true;
 }
 
-export async function directoryCheck(answers: {
+export async function checkAllowToInstall(answers: {
   projectName: string;
   template: string;
 }): Promise<boolean> {
@@ -90,7 +90,7 @@ export async function init() {
       throw new Error("No answers received from inquirer prompt.");
     }
 
-    const isAllowToInstall = await directoryCheck(answers);
+    const isAllowToInstall = await checkAllowToInstall(answers);
 
     if (!isAllowToInstall) {
       throw new Error("Directory is not empty.");
