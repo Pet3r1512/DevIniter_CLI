@@ -8,6 +8,8 @@ import { fileURLToPath } from "node:url";
 import { scanTemplates } from "./scan_templates.js";
 import ora from "ora";
 
+const DEFAULT_TEMPLATES = ["nextjs", "vite"];
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 export const templateDirectory = path.join(__dirname, "../templates");
@@ -28,7 +30,8 @@ export function scaffoldTemplate(projectName: string, template: string) {
     );
   } catch (error) {
     spinner.fail("Failed to install template.");
-    console.error(error);
+    console.error((error as Error).message);
+    throw error;
   }
 
   return true;
@@ -71,7 +74,9 @@ export async function checkAllowToInstall(answers: {
 
 export async function init() {
   try {
-    const templates = scanTemplates();
+    // In case templates can not be scanned automactically, we can provide a default list of templates
+    const templates =
+      scanTemplates().length > 0 ? scanTemplates() : DEFAULT_TEMPLATES;
     const answers = await inquirer.prompt([
       {
         type: "input",
@@ -90,16 +95,22 @@ export async function init() {
       throw new Error("No answers received from inquirer prompt.");
     }
 
+    const { projectName, template } = answers;
+
     const isAllowToInstall = await checkAllowToInstall(answers);
 
     if (!isAllowToInstall) {
       throw new Error("Directory is not empty.");
     }
 
-    scaffoldTemplate(answers.projectName, answers.template.toLowerCase());
+    scaffoldTemplate(projectName, template.toLowerCase());
   } catch (error) {
-    console.error("Error during initialization: ", error);
+    console.error("Error during initialization: ", (error as Error).message);
+    throw error;
   }
 }
 
-init();
+init().catch((error) => {
+  console.error("Error: ", (error as Error).message);
+  process.exit(1);
+});
