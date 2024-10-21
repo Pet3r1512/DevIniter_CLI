@@ -26,9 +26,9 @@ export function scaffoldTemplate(projectName: string, template: string) {
     spinner.succeed(
       `Project ${projectName} created successfully using ${template} template 🚀.`
     );
-  } catch (error: Error | any) {
+  } catch (error) {
     spinner.fail("Failed to install template.");
-    console.error(error.message);
+    console.error((error as Error).message);
     process.exit(1);
   }
 
@@ -89,11 +89,11 @@ export async function init() {
       },
     ]);
 
-    const { projectName, template } = answers;
-
     if (!answers) {
       throw new Error("No answers received from inquirer prompt.");
     }
+
+    const { projectName, template } = answers;
 
     const isAllowToInstall = await checkAllowToInstall(answers);
 
@@ -102,8 +102,8 @@ export async function init() {
     }
 
     scaffoldTemplate(projectName, template.toLowerCase());
-  } catch (error: Error | any) {
-    console.error("Error during initialization: ", error.message);
+  } catch (error) {
+    console.error("Error during initialization: ", (error as Error).message);
     process.exit(1);
   }
 }
