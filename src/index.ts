@@ -21,7 +21,7 @@ export function scaffoldTemplate(projectName: string, template: string) {
   try {
     fs.copySync(templatePath, projectPath);
 
-    execaCommandSync("npm install", { cwd: projectPath, stdio: "inherit" });
+    execaCommandSync("pnpm install", { cwd: projectPath, stdio: "inherit" });
 
     spinner.succeed(
       `Project ${projectName} created successfully using ${template} template 🚀.`
@@ -32,6 +32,35 @@ export function scaffoldTemplate(projectName: string, template: string) {
   }
 
   return true;
+}
+
+export async function directoryCheck(answers: {
+  projectName: string;
+  template: string;
+}) {
+  const projectPath = path.join(process.cwd(), answers.projectName);
+
+  if (fs.existsSync(projectPath) && fs.readdirSync(projectPath).length > 0) {
+    const { action } = await inquirer.prompt([
+      {
+        type: "list",
+        name: "action",
+        message: `The directory ${answers.projectName} is not empty. What would you like to do?`,
+        choices: [
+          { name: "Remove all existing files and continue", value: "remove" },
+          { name: "Cancel installation", value: "cancel" },
+          { name: "Ignore files and continue", value: "ignore" },
+        ],
+      },
+    ]);
+
+    if (action === "cancel") {
+      console.log("Installation cancelled.");
+      return;
+    } else if (action === "remove") {
+      fs.emptyDirSync(projectPath);
+    }
+  }
 }
 
 export async function init() {
@@ -54,6 +83,8 @@ export async function init() {
     if (!answers) {
       throw new Error("No answers received from inquirer prompt.");
     }
+
+    directoryCheck(answers);
 
     scaffoldTemplate(answers.projectName, answers.template.toLowerCase());
   } catch (error) {
