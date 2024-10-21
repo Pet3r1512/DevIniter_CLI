@@ -90,9 +90,13 @@ export async function init() {
       throw new Error("No answers received from inquirer prompt.");
     }
 
-    if ((await directoryCheck(answers)) === true) {
-      scaffoldTemplate(answers.projectName, answers.template.toLowerCase());
+    const isAllowToInstall = await directoryCheck(answers);
+
+    if (!isAllowToInstall) {
+      throw new Error("Directory is not empty.");
     }
+
+    scaffoldTemplate(answers.projectName, answers.template.toLowerCase());
   } catch (error) {
     console.error("Error during initialization: ", error);
   }
