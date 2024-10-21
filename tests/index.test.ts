@@ -31,7 +31,7 @@ describe("CLI behaviors: ", () => {
     const result = scaffoldTemplate(project_name, template);
 
     expect(copySyncMock).toHaveBeenCalledWith(templatePath, projectPath);
-    expect(execaCommandSyncMock).toHaveBeenCalledWith("npm install", {
+    expect(execaCommandSyncMock).toHaveBeenCalledWith("pnpm install", {
       cwd: projectPath,
       stdio: "inherit",
     });
