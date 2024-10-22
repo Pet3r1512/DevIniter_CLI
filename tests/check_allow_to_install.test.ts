@@ -34,7 +34,7 @@ describe("non-empty directory handler", () => {
   });
 
   it("should return true and remove all files if user choose to remove all existing files", async () => {
-    vi.spyOn(inquirer, "prompt").mockResolvedValue({ action: "remove" });
+    promptSpy.mockResolvedValueOnce({ action: "remove" });
 
     const result = await checkAllowToInstall({
       projectName: path.basename(projectPath),
@@ -46,7 +46,7 @@ describe("non-empty directory handler", () => {
   });
 
   it("shour return false if user choose to cancel installation process", async () => {
-    vi.spyOn(inquirer, "prompt").mockResolvedValue({
+    promptSpy.mockResolvedValueOnce({
       action: "cancel",
     });
 
@@ -59,7 +59,7 @@ describe("non-empty directory handler", () => {
   });
 
   it("should return true if the user chooses to ignore files and continue", async () => {
-    vi.spyOn(inquirer, "prompt").mockResolvedValue({
+    promptSpy.mockResolvedValueOnce({
       action: "ignore",
     });
 
