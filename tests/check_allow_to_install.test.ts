@@ -4,14 +4,18 @@ import path from "node:path";
 import { checkAllowToInstall } from "../src/check_allow_to_install";
 import inquirer from "inquirer";
 
-const projectName = "testProject";
-const template = "Nextjs";
-const generatePath = path.join(__dirname, projectName);
-const projectPath = path.join(process.cwd(), projectName);
-const templatePath = path.join(__dirname, "../templates", template);
+const TEST_TEMPLATE = "Nextjs";
+const promptSpy = vi.spyOn(inquirer, "prompt");
 
 describe("non-empty directory handler", () => {
+  let projectPath: string = "";
+
   beforeEach(() => {
+    const workerId = process.env.VITEST_WORKER_ID || "0";
+    const projectName = `testProject_${workerId}`;
+
+    projectPath = path.join(process.cwd(), projectName);
+
     fs.ensureDirSync(projectPath);
     fs.writeFileSync(path.join(projectPath, "somefile.txt"), "");
   });
@@ -23,8 +27,8 @@ describe("non-empty directory handler", () => {
   it("should return true if the chosen directory is not empty", async () => {
     fs.emptyDirSync(projectPath);
     const result = await checkAllowToInstall({
-      projectName: projectName,
-      template: "nextjs",
+      projectName: path.basename(projectPath),
+      template: TEST_TEMPLATE,
     });
     expect(result).toBe(true);
   });
@@ -33,8 +37,8 @@ describe("non-empty directory handler", () => {
     vi.spyOn(inquirer, "prompt").mockResolvedValue({ action: "remove" });
 
     const result = await checkAllowToInstall({
-      projectName: projectName,
-      template: "nextjs",
+      projectName: path.basename(projectPath),
+      template: TEST_TEMPLATE,
     });
 
     expect(fs.readdirSync(projectPath).length).toBe(0);
@@ -47,8 +51,8 @@ describe("non-empty directory handler", () => {
     });
 
     const result = await checkAllowToInstall({
-      projectName: projectName,
-      template: "nextjs",
+      projectName: path.basename(projectPath),
+      template: TEST_TEMPLATE,
     });
 
     expect(result).toBe(false);
@@ -60,8 +64,8 @@ describe("non-empty directory handler", () => {
     });
 
     const result = await checkAllowToInstall({
-      projectName: projectName,
-      template: "nextjs",
+      projectName: path.basename(projectPath),
+      template: TEST_TEMPLATE,
     });
 
     expect(result).toBe(true);
