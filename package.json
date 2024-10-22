@@ -10,7 +10,7 @@
     "link-cli": "pnpm --global unlink deviniter_cli && pnpm --global link deviniter_cli",
     "dev": "tsc -w",
     "build": "tsc",
-    "test": "vitest ./tests"
+    "test": "vitest run tests"
   },
   "author": "Peter Pham",
   "license": "MIT",
