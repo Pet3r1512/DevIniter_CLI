@@ -11,7 +11,7 @@ describe("non-empty directory handler", () => {
   let projectPath: string = "";
 
   beforeEach(() => {
-    const workerId = process.env.VITEST_WORKER_ID || "0";
+    const workerId = process.env.VITEST_WORKER_ID;
     const projectName = `testProject_${workerId}`;
 
     projectPath = path.join(process.cwd(), projectName);
