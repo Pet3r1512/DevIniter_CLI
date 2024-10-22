@@ -24,7 +24,7 @@ describe("non-empty directory handler", () => {
     fs.removeSync(projectPath);
   });
 
-  it("should return true if the chosen directory is not empty", async () => {
+  it("should return true if the chosen directory is empty", async () => {
     fs.emptyDirSync(projectPath);
     const result = await checkAllowToInstall({
       projectName: path.basename(projectPath),
