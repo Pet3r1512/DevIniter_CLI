@@ -45,7 +45,7 @@ describe("non-empty directory handler", () => {
     expect(result).toBe(true);
   });
 
-  it("shour return false if user choose to cancel installation process", async () => {
+  it("should return false if user choose to cancel installation process", async () => {
     promptSpy.mockResolvedValueOnce({
       action: "cancel",
     });
