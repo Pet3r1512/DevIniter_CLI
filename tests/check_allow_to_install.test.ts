@@ -4,10 +4,10 @@ import path from "node:path";
 import { checkAllowToInstall } from "../src/check_allow_to_install";
 import inquirer from "inquirer";
 
-const project_name = "testProject";
+const projectName = "testProject";
 const template = "Nextjs";
-const generatePath = path.join(__dirname, project_name);
-const projectPath = path.join(process.cwd(), project_name);
+const generatePath = path.join(__dirname, projectName);
+const projectPath = path.join(process.cwd(), projectName);
 const templatePath = path.join(__dirname, "../templates", template);
 
 describe("non-empty directory handler", () => {
@@ -23,7 +23,7 @@ describe("non-empty directory handler", () => {
   it("should return true if the chosen directory is not empty", async () => {
     fs.emptyDirSync(projectPath);
     const result = await checkAllowToInstall({
-      projectName: project_name,
+      projectName: projectName,
       template: "nextjs",
     });
     expect(result).toBe(true);
@@ -33,7 +33,7 @@ describe("non-empty directory handler", () => {
     vi.spyOn(inquirer, "prompt").mockResolvedValue({ action: "remove" });
 
     const result = await checkAllowToInstall({
-      projectName: project_name,
+      projectName: projectName,
       template: "nextjs",
     });
 
@@ -47,7 +47,7 @@ describe("non-empty directory handler", () => {
     });
 
     const result = await checkAllowToInstall({
-      projectName: project_name,
+      projectName: projectName,
       template: "nextjs",
     });
 
@@ -60,7 +60,7 @@ describe("non-empty directory handler", () => {
     });
 
     const result = await checkAllowToInstall({
-      projectName: project_name,
+      projectName: projectName,
       template: "nextjs",
     });
 
