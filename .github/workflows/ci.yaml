@@ -25,6 +25,5 @@ jobs:
       - name: Run Vitest
         run: pnpm run test
 
-      - name: Build Project
-        run: pnpm install --frozen-lockfile
-        run: pnpm run lint && pnpm run build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint && pnpm run build
