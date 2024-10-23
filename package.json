@@ -1,5 +1,5 @@
 {
-  "name": "deviniter_cli",
+  "name": "deviniter",
   "bin": {
     "cli": "./dist/index.js"
   },
