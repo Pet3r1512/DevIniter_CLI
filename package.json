@@ -11,12 +11,12 @@
   "scripts": {
     "link-cli": "pnpm --global unlink deviniter_cli && pnpm --global link deviniter_cli",
     "dev": "tsc -w",
-    "build:tsc": "tsc",
     "test": "vitest run tests",
     "build": "tsup",
     "version": "changeset version",
     "release": "changeset publish",
-    "prepublishOnly": "pnpm build"
+    "prepublishOnly": "pnpm build",
+    "lint": "tsc"
   },
   "author": "Peter Pham",
   "license": "MIT",
