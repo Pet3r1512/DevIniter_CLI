@@ -14,7 +14,7 @@
     "test": "vitest run tests",
     "build": "tsup",
     "version": "changeset version",
-    "release": "pnpm run build && changeset publish --otp=$OTP",
+    "release": "pnpm run build && changeset publish [--otp={token}]",
     "prepublishOnly": "pnpm build",
     "lint": "tsc"
   },
