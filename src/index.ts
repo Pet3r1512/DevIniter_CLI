@@ -11,7 +11,7 @@ import { checkAllowToInstall } from "./check_allow_to_install.js";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 
-const __filename = fileURLToPath(import.meta.url);
+// const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 export const templateDirectory = path.join(__dirname, "../templates");
 
