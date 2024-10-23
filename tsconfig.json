@@ -4,7 +4,7 @@
   "_version": "20.1.0",
   "compilerOptions": {
     "target": "esnext",
-    "module": "node16",
+    "module": "esnext",
     "outDir": "./dist",
     "rootDir": "./src",
     "strict": true,
@@ -12,7 +12,7 @@
     "noUncheckedIndexedAccess": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "node16"
+    "moduleResolution": "bundler"
   },
   "include": ["./src/**/*.ts"]
 }
