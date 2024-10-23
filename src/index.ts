@@ -4,15 +4,12 @@ import inquirer from "inquirer";
 import path from "node:path";
 import fs from "fs-extra";
 import { execaCommandSync } from "execa";
-import { fileURLToPath } from "node:url";
 import { scanTemplates } from "./scan_templates.js";
 import ora from "ora";
 import { checkAllowToInstall } from "./check_allow_to_install.js";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 
-// const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 export const templateDirectory = path.join(__dirname, "../templates");
 
 export function scaffoldTemplate(projectName: string, template: string) {
