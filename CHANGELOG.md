@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.9
+
+### Patch Changes
+
+- 20c3ea7: Fix incorrect output file
+
 ## 1.0.8
 
 ### Patch Changes
