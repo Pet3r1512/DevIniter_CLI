@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.6
+
+### Patch Changes
+
+- db985f0: Fix missing modules
+
 ## 1.0.5
 
 ### Patch Changes
