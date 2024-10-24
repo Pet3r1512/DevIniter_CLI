@@ -12,7 +12,7 @@
     "link-cli": "pnpm --global unlink deviniter_cli && pnpm --global link deviniter_cli",
     "dev": "tsc -w",
     "test": "vitest run tests",
-    "build": "tsup",
+    "build": "tsup-node",
     "version": "changeset version",
     "release": "pnpm run build && changeset publish",
     "prepublishOnly": "pnpm build",

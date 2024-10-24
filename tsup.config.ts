@@ -5,4 +5,5 @@ export default defineConfig({
   format: ["cjs"],
   sourcemap: true,
   clean: true,
+  shims: true,
 });
