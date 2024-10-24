@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.8
+
+### Patch Changes
+
+- 51d5e1b: Try to fix dynamic modules require
+
 ## 1.0.7
 
 ### Patch Changes
