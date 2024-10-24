@@ -5,9 +5,8 @@
   },
   "version": "1.0.8",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.cjs",
-  "types": "dist/index.d.ts",
   "scripts": {
     "link-cli": "pnpm --global unlink deviniter_cli && pnpm --global link deviniter_cli",
     "dev": "tsc -w",
