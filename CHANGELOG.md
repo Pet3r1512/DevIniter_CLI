@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.7
+
+### Patch Changes
+
+- 129f526: Fix incorrect output format
+
 ## 1.0.6
 
 ### Patch Changes
