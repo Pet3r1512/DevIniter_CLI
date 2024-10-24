@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-
-const templateDirectory = path.join(__dirname, "../templates");
+import { templateDirectory } from "./index";
 
 export function scanTemplates(): string[] {
   try {
