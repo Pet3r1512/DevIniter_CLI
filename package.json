@@ -3,7 +3,7 @@
   "bin": {
     "cli": "./dist/index.cjs"
   },
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "main": "dist/index.cjs",
   "module": "dist/index.cjs",
