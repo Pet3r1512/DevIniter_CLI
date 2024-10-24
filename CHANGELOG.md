@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.10
+
+### Patch Changes
+
+- ecbfc75: Fix missing mjs format for execa
+
 ## 1.0.9
 
 ### Patch Changes
