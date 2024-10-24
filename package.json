@@ -1,7 +1,7 @@
 {
   "name": "deviniter",
   "bin": {
-    "cli": "./dist/index.js"
+    "cli": "./dist/index.cjs"
   },
   "version": "1.0.9",
   "description": "",
@@ -9,7 +9,7 @@
   "module": "dist/index.cjs",
   "scripts": {
     "link-cli": "pnpm --global unlink deviniter_cli && pnpm --global link deviniter_cli",
-    "dev": "tsc -w",
+    "dev": "tsup-node --watch",
     "test": "vitest run tests",
     "build": "tsup-node",
     "version": "changeset version",
