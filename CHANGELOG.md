@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.1.0
+
+### Minor Changes
+
+- a86c7fa: Only support esm with update in Vite template
+
 ## 1.0.10
 
 ### Patch Changes
