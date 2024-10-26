@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.14
+
+### Patch Changes
+
+- aa3eb5c: Use dynamic imports and allow user to use NPM and PNPM to install DevIniter's Templates
+
 ## 1.0.13
 
 ### Patch Changes
