@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 
-import inquirer from "inquirer";
+const inquirer = require("inquirer");
 import path from "node:path";
-import fs from "fs-extra";
-import { execaCommandSync } from "execa";
 import { scanTemplates } from "./scan_templates.js";
-import ora from "ora";
 import { checkAllowToInstall } from "./check_allow_to_install.js";
+import ora from "ora";
+import fs from "fs-extra";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 
 export const templateDirectory = path.join(__dirname, "../templates");
 
-export function scaffoldTemplate(projectName: string, template: string) {
+export async function scaffoldTemplate(projectName: string, template: string) {
+  const { execaCommandSync } = await import("execa"); // dynamic import for execa
+
   const projectPath = path.join(process.cwd(), projectName);
   const templatePath = path.join(templateDirectory, template);
 
