@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.1.1
+
+### Patch Changes
+
+- a12e673: Fix un-supported cjs files
+
 ## 1.1.0
 
 ### Minor Changes
