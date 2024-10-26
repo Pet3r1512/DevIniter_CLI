@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.12
+
+### Patch Changes
+
+- 0b162c6: Fixbug
+
 ## 1.2.0
 
 ### Minor Changes
