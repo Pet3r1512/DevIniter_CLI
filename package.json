@@ -1,12 +1,12 @@
 {
   "name": "deviniter",
   "bin": {
-    "cli": "./dist/index.js"
+    "cli": "./dist/index.cjs"
   },
   "version": "1.0.12",
   "description": "",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.cjs",
   "scripts": {
     "link-cli": "pnpm --global unlink deviniter_cli && pnpm --global link deviniter_cli",
     "dev": "tsup-node --watch",
