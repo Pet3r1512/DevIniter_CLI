@@ -1,18 +1,25 @@
 #!/usr/bin/env node
 
-import inquirer from "inquirer";
+const inquirer = require("inquirer");
 import path from "node:path";
-import fs from "fs-extra";
-import { execaCommandSync } from "execa";
 import { scanTemplates } from "./scan_templates.js";
-import ora from "ora";
 import { checkAllowToInstall } from "./check_allow_to_install.js";
+import fs from "fs-extra";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
-
 export const templateDirectory = path.join(__dirname, "../templates");
 
-export function scaffoldTemplate(projectName: string, template: string) {
+async function detectPackageManager() {
+  const pnpmInPath =
+    process.env._?.includes("pnpx") ||
+    process.argv.some((arg) => arg.includes("pnpx"));
+  return pnpmInPath ? "pnpm" : "npm";
+}
+
+export async function scaffoldTemplate(projectName: string, template: string) {
+  const { execaCommandSync } = await import("execa"); // dynamic import for execa
+  const ora = (await import("ora")).default;
+
   const projectPath = path.join(process.cwd(), projectName);
   const templatePath = path.join(templateDirectory, template);
 
@@ -21,7 +28,13 @@ export function scaffoldTemplate(projectName: string, template: string) {
   try {
     fs.copySync(templatePath, projectPath);
 
-    execaCommandSync("pnpm install", { cwd: projectPath, stdio: "inherit" });
+    // Detect package manager and run install command
+    const packageManager = await detectPackageManager();
+    const installCommand =
+      packageManager === "npm"
+        ? "npm install --legacy-peer-deps"
+        : "pnpm install";
+    execaCommandSync(installCommand, { cwd: projectPath, stdio: "inherit" });
 
     spinner.succeed(
       `Project ${projectName} created successfully using ${template} template 🚀.`
@@ -37,7 +50,6 @@ export function scaffoldTemplate(projectName: string, template: string) {
 
 export async function init() {
   try {
-    // In case templates can not be scanned automactically, we can provide a default list of templates
     const templates =
       scanTemplates().length > 0 ? scanTemplates() : DEFAULT_TEMPLATES;
     const answers = await inquirer.prompt([
@@ -59,7 +71,6 @@ export async function init() {
     }
 
     const { projectName, template } = answers;
-
     const isAllowToInstall = await checkAllowToInstall(answers);
 
     if (!isAllowToInstall) {
