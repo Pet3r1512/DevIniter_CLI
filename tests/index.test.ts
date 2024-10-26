@@ -1,19 +1,31 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import path from "node:path";
-import { execaCommandSync } from "execa";
 import fs from "fs-extra";
 import { scaffoldTemplate } from "../src/index";
 
 const project_name = "testProject";
-const template = "Nextjs";
+const template = "nextjs";
 const generatePath = path.join(__dirname, project_name);
 const projectPath = path.join(process.cwd(), project_name);
 const templatePath = path.join(__dirname, "../templates", template);
 
-vi.mock("fs-extra");
-vi.mock("execa");
+vi.mock("fs-extra", async () => {
+  const actualFs = await vi.importActual<typeof import("fs-extra")>("fs-extra");
+  return {
+    ...actualFs,
+    copySync: vi.fn(),
+  };
+});
 
-describe("CLI behaviors: ", () => {
+vi.mock("execa", async () => {
+  const actualExeca = await vi.importActual<typeof import("execa")>("execa");
+  return {
+    ...actualExeca,
+    execaCommandSync: vi.fn(),
+  };
+});
+
+describe("CLI behaviors:", () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -25,10 +37,13 @@ describe("CLI behaviors: ", () => {
   });
 
   it("should scaffold template and install dependencies", async () => {
-    const copySyncMock = vi.mocked(fs.copySync);
-    const execaCommandSyncMock = vi.mocked(execaCommandSync);
+    const copySyncMock = vi.spyOn(fs, "copySync");
+    const execaCommandSyncMock = vi.spyOn(
+      await import("execa"),
+      "execaCommandSync"
+    );
 
-    const result = scaffoldTemplate(project_name, template);
+    const result = await scaffoldTemplate(project_name, template);
 
     expect(copySyncMock).toHaveBeenCalledWith(templatePath, projectPath);
     expect(execaCommandSyncMock).toHaveBeenCalledWith("pnpm install", {
