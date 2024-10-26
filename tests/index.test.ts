@@ -46,10 +46,13 @@ describe("CLI behaviors:", () => {
     const result = await scaffoldTemplate(project_name, template);
 
     expect(copySyncMock).toHaveBeenCalledWith(templatePath, projectPath);
-    expect(execaCommandSyncMock).toHaveBeenCalledWith("pnpm install", {
-      cwd: projectPath,
-      stdio: "inherit",
-    });
+    expect(execaCommandSyncMock).toHaveBeenCalledWith(
+      "npm install --legacy-peer-deps",
+      {
+        cwd: projectPath,
+        stdio: "inherit",
+      }
+    );
     expect(result).toBe(true);
   });
 });
