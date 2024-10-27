@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.17
+
+### Patch Changes
+
+- 75f2680: Remove pre-install dependencies feature
+
 ## 1.0.16
 
 ### Patch Changes
