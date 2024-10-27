@@ -9,13 +9,6 @@ import fs from "fs-extra";
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 export const templateDirectory = path.resolve(__dirname, "../templates");
 
-async function detectPackageManager() {
-  const pnpmInPath =
-    process.env._?.includes("pnpx") ||
-    process.argv.some((arg) => arg.includes("pnpx"));
-  return pnpmInPath ? "pnpm" : "npm";
-}
-
 export async function scaffoldTemplate(projectName: string, template: string) {
   const { default: ora } = await import("ora");
 
@@ -36,15 +29,15 @@ export async function scaffoldTemplate(projectName: string, template: string) {
     packageJson.name = projectName;
     fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 });
 
-    const packageManager = await detectPackageManager();
-
     spinner.succeed(
-      `Project ${projectName} created successfully using ${template} template 🚀.`
+      `Project ${projectName} created successfully using ${template} template 🚀.\n`
     );
 
-    spinner.info("Now, you can: ");
-    spinner.info("cd " + projectName);
-    spinner.info(packageManager + " install");
+    spinner.info("Now, run: \n");
+    spinner.info("cd " + projectName + "\n");
+    spinner.info(
+      "Then, check for dependencies installation here: https://deviniter.vercel.app/docs/installation#installing-projects-dependencies"
+    );
   } catch (error) {
     spinner.fail("Failed to install template.");
     console.error((error as Error).message);
