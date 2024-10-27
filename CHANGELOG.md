@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.16
+
+### Patch Changes
+
+- 9e69964: Fixbug
+
 ## 1.1.1
 
 ### Patch Changes
