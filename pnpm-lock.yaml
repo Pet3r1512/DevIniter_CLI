@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      cross-spawn:
+        specifier: ^7.0.3
+        version: 7.0.3
       fs-extra:
         specifier: ^11.2.0
         version: 11.2.0
