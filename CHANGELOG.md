@@ -4,6 +4,12 @@
 
 ### Patch Changes
 
+- 064d560: Fix: missing modules with pnpm
+
+## 1.0.19
+
+### Patch Changes
+
 - ac748a1: Fix missing template folder
 
 ## 1.0.18
