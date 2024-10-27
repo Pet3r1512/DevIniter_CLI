@@ -5,6 +5,7 @@ import path from "node:path";
 import { scanTemplates } from "./scan_templates.js";
 import { checkAllowToInstall } from "./check_allow_to_install.js";
 import fs from "fs-extra";
+const spawn = require("cross-spawn");
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 export const templateDirectory = path.resolve(__dirname, "../templates");
