@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.21
+
+### Patch Changes
+
+- fd275bf: Fix bug on pnpm install script
+
 ## 1.0.20
 
 ### Patch Changes
