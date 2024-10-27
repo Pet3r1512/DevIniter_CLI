@@ -5,7 +5,7 @@ import path from "node:path";
 import { scanTemplates } from "./scan_templates.js";
 import { checkAllowToInstall } from "./check_allow_to_install.js";
 import fs from "fs-extra";
-const spawn = require("cross-spawn");
+import ora from "ora";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 export const templateDirectory = path.join(__dirname, "../templates");
@@ -18,7 +18,8 @@ async function detectPackageManager() {
 }
 
 export async function scaffoldTemplate(projectName: string, template: string) {
-  const ora = (await import("ora")).default;
+  const { default: spawn } = await import("cross-spawn"); // Dynamic import for cross-spawn
+  const { default: ora } = await import("ora"); // Dynamic import for ora
 
   const projectPath = path.join(process.cwd(), projectName);
   const templatePath = path.join(templateDirectory, template);
@@ -30,12 +31,13 @@ export async function scaffoldTemplate(projectName: string, template: string) {
 
     // Detect package manager and run install command
     const packageManager = await detectPackageManager();
-    const installCommand =
+    const installCommand = packageManager === "npm" ? "npm" : "pnpm";
+    const args =
       packageManager === "npm"
         ? ["install", "--legacy-peer-deps"]
         : ["install"];
 
-    const result = spawn.sync(packageManager, installCommand, {
+    const result = spawn.sync(installCommand, args, {
       cwd: projectPath,
       stdio: "inherit",
     });
