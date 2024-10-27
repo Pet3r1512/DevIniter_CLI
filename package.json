@@ -3,7 +3,7 @@
   "bin": {
     "cli": "./dist/index.cjs"
   },
-  "version": "1.0.19",
+  "version": "1.0.18",
   "description": "",
   "main": "dist/index.cjs",
   "module": "dist/index.cjs",
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.27.9",
+    "@types/cross-spawn": "^6.0.6",
     "@types/fs-extra": "^11.0.4",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.7.7",
