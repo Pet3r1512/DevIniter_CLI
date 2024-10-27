@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.19
+
+### Patch Changes
+
+- ac748a1: Fix missing template folder
+
 ## 1.0.18
 
 ### Patch Changes
