@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.23
+
+### Patch Changes
+
+- f432ad9: Remove unused scripts and only support npx
+
 ## 1.0.22
 
 ### Patch Changes
