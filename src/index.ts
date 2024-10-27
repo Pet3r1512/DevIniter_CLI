@@ -5,6 +5,7 @@ import path from "node:path";
 import { scanTemplates } from "./scan_templates.js";
 import { checkAllowToInstall } from "./check_allow_to_install.js";
 import fs from "fs-extra";
+const spawn = require("cross-spawn");
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 export const templateDirectory = path.join(__dirname, "../templates");
@@ -17,7 +18,6 @@ async function detectPackageManager() {
 }
 
 export async function scaffoldTemplate(projectName: string, template: string) {
-  const { execaCommandSync } = await import("execa"); // dynamic import for execa
   const ora = (await import("ora")).default;
 
   const projectPath = path.join(process.cwd(), projectName);
@@ -32,9 +32,17 @@ export async function scaffoldTemplate(projectName: string, template: string) {
     const packageManager = await detectPackageManager();
     const installCommand =
       packageManager === "npm"
-        ? "npm install --legacy-peer-deps"
-        : "pnpm install";
-    execaCommandSync(installCommand, { cwd: projectPath, stdio: "inherit" });
+        ? ["install", "--legacy-peer-deps"]
+        : ["install"];
+
+    const result = spawn.sync(packageManager, installCommand, {
+      cwd: projectPath,
+      stdio: "inherit",
+    });
+
+    if (result.error) {
+      throw result.error;
+    }
 
     spinner.succeed(
       `Project ${projectName} created successfully using ${template} template 🚀.`
