@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.0.20
+
+### Patch Changes
+
+- 5aba358: Fix missing modules with pnpm
+
 ## 1.0.19
 
 ### Patch Changes
