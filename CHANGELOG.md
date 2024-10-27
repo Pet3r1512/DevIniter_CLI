@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.1.0
+
+### Minor Changes
+
+- 1ca0271: Run child processes with cross-spawn
+
 ## 1.0.14
 
 ### Patch Changes
