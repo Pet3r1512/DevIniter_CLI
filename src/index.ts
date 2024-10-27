@@ -7,7 +7,7 @@ import { checkAllowToInstall } from "./check_allow_to_install.js";
 import fs from "fs-extra";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
-export const templateDirectory = path.join(__dirname, "../templates");
+export const templateDirectory = path.resolve(__dirname, "../templates");
 
 async function detectPackageManager() {
   const pnpmInPath =
@@ -23,18 +23,19 @@ export async function scaffoldTemplate(projectName: string, template: string) {
   const templatePath = path.join(templateDirectory, template);
   const packageJsonPath = path.join(projectPath, "package.json");
 
+  if (!fs.existsSync(templatePath)) {
+    throw new Error(`Template ${template} does not exist.`);
+  }
+
   const spinner = ora("Installing template...").start();
 
   try {
-    // Copy template files to the project path
     fs.copySync(templatePath, projectPath);
 
-    // Read and update package.json name
-    const packageJson = fs.readJsonSync(packageJsonPath); // Read package.json
-    packageJson.name = projectName; // Update the name field
-    fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 }); // Write updated JSON back to package.json
+    const packageJson = fs.readJsonSync(packageJsonPath);
+    packageJson.name = projectName;
+    fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 });
 
-    // Detect package manager and run install command
     const packageManager = await detectPackageManager();
 
     spinner.succeed(
@@ -82,7 +83,7 @@ export async function init() {
       throw new Error("Directory is not empty.");
     }
 
-    scaffoldTemplate(projectName, template.toLowerCase());
+    await scaffoldTemplate(projectName, template.toLowerCase());
   } catch (error) {
     console.error("Error during initialization: ", (error as Error).message);
     throw error;
