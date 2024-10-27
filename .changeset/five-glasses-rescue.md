@@ -1,5 +1,0 @@
----
-"deviniter": patch
----
-
-Fix bug
