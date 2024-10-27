@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.1.1
+
+### Patch Changes
+
+- 3eeb107: Fix release bug
+
 ## 1.1.0
 
 ### Minor Changes
