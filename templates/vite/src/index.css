@@ -13,3 +13,19 @@
     color: white;
   }
 }
+
+.body {
+  height: calc(100dvh - 10.5rem);
+}
+
+@media only screen and (min-width: 600px) {
+  .body {
+    height: calc(100dvh - 10.5rem);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .body {
+    height: calc(100dvh - 11rem);
+  }
+}
