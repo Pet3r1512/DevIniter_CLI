@@ -35,7 +35,7 @@ export default function Home() {
               >
                 NextJS (Page Router)
               </Link>{" "}
-              - v14
+              - v15
             </li>
             <li>
               <Link
@@ -55,7 +55,7 @@ export default function Home() {
               >
                 React
               </Link>{" "}
-              - v18
+              - v19
             </li>
             <li>
               <Link
