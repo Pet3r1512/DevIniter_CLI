@@ -27,14 +27,11 @@ export default function Page({
         <Header />
         <section
           className={cn(
-            "flex flex-col lg:min-h-screen max-w-[1440px] light:bg-white bg-black-main"
+            "page-section flex flex-col max-w-[1440px] light:bg-white bg-black-main"
           )}
         >
           <div
-            className={cn(
-              "mx-auto w-full max-w-7xl px-6 min-h-screen",
-              className
-            )}
+            className={cn("mx-auto w-full max-w-7xl px-6 h-full", className)}
           >
             {children}
           </div>
