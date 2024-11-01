@@ -74,3 +74,18 @@
     @apply bg-background text-foreground;
   }
 }
+.page-section {
+  height: calc(100dvh - 10.5rem);
+}
+
+@media only screen and (min-width: 600px) {
+  .page-section {
+    height: calc(100dvh - 10.5rem);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .page-section {
+    height: calc(100dvh - 11rem);
+  }
+}
