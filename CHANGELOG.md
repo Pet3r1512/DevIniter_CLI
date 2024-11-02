@@ -1,6 +1,6 @@
 # deviniter
 
-## 1.1.0
+## 1.1.10
 
 ### Minor Changes
 
