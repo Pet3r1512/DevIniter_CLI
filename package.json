@@ -3,7 +3,11 @@
   "bin": {
     "cli": "./dist/index.cjs"
   },
+<<<<<<< Updated upstream
   "version": "1.0.23",
+=======
+  "version": "1.0.11",
+>>>>>>> Stashed changes
   "description": "",
   "main": "dist/index.cjs",
   "module": "dist/index.cjs",
