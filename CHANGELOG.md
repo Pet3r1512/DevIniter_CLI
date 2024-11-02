@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.1.0
+
+### Minor Changes
+
+- 7cdcc6b: Fixbugs, update nextjs and reactjs, update templates' UI
+
 ## 1.0.23
 
 ### Patch Changes
