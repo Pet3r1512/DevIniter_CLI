@@ -3,10 +3,10 @@ import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   return (
-    <>
-      <ThemeToggle className="mt-10 ml-4 lg:ml-24 h-8 lg:h-10 " />
-      <body className="body relative flex items-center justify-center h-screen">
-        <section className="flex flex-col px-5 lg:px-0 gap-y-5">
+    <div>
+      <ThemeToggle className="mt-10 ml-4 lg:ml-24 h-8 lg:h-10" />
+      <div className="body relative flex items-center justify-center h-screen">
+        <div className="flex flex-col px-5 lg:px-0 gap-y-5">
           <p className="lg:text-6xl font-bold text-4xl md:text-5xl bg-gradient-to-br from-primary to-secondary inline-block text-transparent bg-clip-text !leading-normal">
             <span className="dark:text-white text-black ">This is</span> Vite +
             React + TypeScript{" "}
@@ -112,10 +112,10 @@ function App() {
               </li>
             </ul>
           </div>
-        </section>
-      </body>
+        </div>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
