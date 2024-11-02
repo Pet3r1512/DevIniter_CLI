@@ -1,4 +1,4 @@
-import ThemeToggle from "@/components/Buttons/ThemeToggle";
+import ThemeToggle from "@/components/Langs/ThemeToggle";
 
 export default function Header() {
   return (

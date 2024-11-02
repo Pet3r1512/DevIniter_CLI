@@ -1,4 +1,5 @@
 import Page from "@/components/Layout/Page";
+import Title from "@/components/Layout/Title";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -6,10 +7,7 @@ export default function Home() {
   return (
     <Page className="flex items-center justify-center">
       <section className="flex flex-col gap-y-5">
-        <p className="lg:text-6xl font-bold text-4xl md:text-5xl bg-gradient-to-br from-primary to-secondary inline-block text-transparent bg-clip-text">
-          <span className="dark:text-white text-black">This is</span> NextJS
-          Starter Template
-        </p>
+        <Title />
         <p className="lg:text-2xl text-lg md:text-xl flex items-center gap-x-2.5">
           🚀 Powered by{" "}
           <Link href={"https://deviniter.vercel.app/"} target="_blank">
