@@ -1,5 +1,5 @@
 {
-  "name": "@deviniter/deviniter",
+  "name": "@deviniter/cli",
   "bin": {
     "cli": "./dist/index.cjs"
   },
