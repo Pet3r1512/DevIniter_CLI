@@ -13,6 +13,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -21,7 +22,8 @@
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "tailwind-merge": "^2.2.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vaul": "^1.1.1"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",

@@ -4,9 +4,9 @@ import { render, screen } from "@testing-library/react";
 import Title from "./Title";
 
 describe("Title test: ", () => {
-  it("should render NextJS Starter Template text", () => {
+  it("should render NEXT.JS - PAGE ROUTER text", () => {
     render(<Title />);
-    const text = screen.getByText("NextJS Starter Template");
+    const text = screen.getByText("NEXT.JS - PAGE ROUTER");
     expect(text).toBeInTheDocument();
   });
 });
