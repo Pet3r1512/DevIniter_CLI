@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  outline: none !important;
+}
+
 @layer base {
   :root {
-    --background: 240 11.11% 96.47%;
+    --background: 210 14.3% 97.3%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -36,7 +40,7 @@
   }
 
   .dark {
-    --background: 210 10.34% 22.75%;
+    --background: 210 11.1% 7.1%;
     --foreground: 210 40% 98%;
 
     --card: 222.2 84% 4.9%;
@@ -72,20 +76,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("/background-light.jpg");
   }
-}
-.page-section {
-  height: calc(100dvh - 10.5rem);
-}
-
-@media only screen and (min-width: 600px) {
-  .page-section {
-    height: calc(100dvh - 10.5rem);
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .page-section {
-    height: calc(100dvh - 11rem);
+  .dark body {
+    background-image: url("/background.png");
   }
 }
