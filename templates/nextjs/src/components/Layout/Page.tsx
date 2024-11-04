@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import Head from "next/head";
 import { ReactNode } from "react";
 import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
 
 export default function Page({
   children,
@@ -23,20 +22,23 @@ export default function Page({
         ></meta>
         <link rel="icon" href="/ico/favicon.ico" />
       </Head>
-      <main>
+      <main className="bg-cover bg-center h-full">
         <Header />
         <section
           className={cn(
-            "page-section flex flex-col max-w-[1440px] light:bg-white bg-black-main"
+            "flex flex-col mx-auto max-w-[1440px] min-h-screen",
+            pageName
           )}
         >
           <div
-            className={cn("mx-auto w-full max-w-7xl px-6 h-full", className)}
+            className={cn(
+              "mx-auto w-full max-w-7xl px-6 min-h-screen",
+              className
+            )}
           >
             {children}
           </div>
         </section>
-        <Footer />
       </main>
     </>
   );

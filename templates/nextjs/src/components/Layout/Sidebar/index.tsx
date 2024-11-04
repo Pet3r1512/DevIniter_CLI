@@ -1,15 +1,23 @@
 import ThemeToggle from "@/components/Langs/ThemeToggle";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerTrigger,
+} from "@/components/shadcn/ui/drawer";
+import { Menu } from "lucide-react";
 import Link from "next/link";
-import Sidebar from "../Sidebar";
 
-export default function Header() {
+export default function Sidebar() {
   return (
-    <header>
-      <div className="max-w-7xl mx-auto py-5 px-5 lg:px-0 fixed top-5 right-24 hidden lg:flex items-center gap-x-2.5">
+    <Drawer direction="left">
+      <DrawerTrigger className="lg:hidden relative top-8 left-5">
+        <Menu />
+      </DrawerTrigger>
+      <DrawerContent className="h-[100dvh] w-2/3 !rounded-l-none rounded-r-xl px-5 py-12 flex flex-col gap-y-5">
         <ThemeToggle />
         <Link
           href="https://github.com/Pet3r1512/DevIniter_CLI/tree/master/templates/nextjs"
-          className="!size-8 lg:size-10 rounded-full bg-gray-500 dark:bg-gray-200 p-2"
+          className="size-8 lg:size-10 rounded-full bg-gray-500 dark:bg-gray-200 p-2"
         >
           <svg
             viewBox="0 0 20 20"
@@ -55,8 +63,7 @@ export default function Header() {
             </g>
           </svg>
         </Link>
-      </div>
-      <Sidebar />
-    </header>
+      </DrawerContent>
+    </Drawer>
   );
 }
