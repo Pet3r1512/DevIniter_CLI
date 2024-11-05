@@ -1,121 +1,72 @@
-import Footer from "./components/Footer";
-import ThemeToggle from "./components/ThemeToggle";
+import Page from "./components/Layout/Page";
+import Title from "./components/Title";
+import UseCaseCard from "./components/UseCaseCard";
 
 function App() {
+  const useCases = [
+    {
+      title: "Personal Portfolio",
+      description:
+        "Showcase your projects, skills, and experience with a fast, modern portfolio site that supports smooth animations and dynamic content.",
+      icon: "👨‍💻",
+    },
+    {
+      title: "Landing Pages",
+      description:
+        "Create high-performance landing pages with fast load times, responsive designs, and interactive elements powered by React.",
+      icon: "🚀",
+    },
+    {
+      title: "Documentation Sites",
+      description:
+        "Build technical documentation, wikis, or knowledge bases with fast navigation and excellent code syntax highlighting.",
+      icon: "📚",
+    },
+    {
+      title: "SPA Applications",
+      description:
+        "Develop single-page applications with client-side routing, state management, and optimized build output.",
+      icon: "⚡",
+    },
+    {
+      title: "Interactive Dashboards",
+      description:
+        "Create data visualization dashboards with real-time updates, charts, and responsive layouts.",
+      icon: "📊",
+    },
+    {
+      title: "Prototypes & MVPs",
+      description:
+        "Quickly build and deploy proof-of-concepts and minimum viable products with Vite's rapid development environment.",
+      icon: "🛠️",
+    },
+  ];
   return (
-    <div>
-      <ThemeToggle className="mt-10 ml-4 lg:ml-24 h-8 lg:h-10" />
-      <div className="body relative flex items-center justify-center h-screen">
-        <div className="flex flex-col px-5 lg:px-0 gap-y-5">
-          <p className="lg:text-6xl font-bold text-4xl md:text-5xl bg-gradient-to-br from-primary to-secondary inline-block text-transparent bg-clip-text !leading-normal">
-            <span className="dark:text-white text-black ">This is</span> Vite +
-            React + TypeScript{" "}
-            <span className="dark:text-white text-black">Starter Template</span>
-          </p>
-          <p className="lg:text-2xl text-lg md:text-xl flex items-center gap-x-2.5">
-            🚀 Published by{" "}
-            <a href={"https://deviniter.vercel.app/"} target="_blank">
-              <img
-                src="/FullLogo.png"
-                alt="DevIniter Logo"
-                className="h-10 w-auto"
+    <Page className="flex items-center justify-center min-h-screen">
+      <section className="flex flex-col gap-y-5 my-24 lg:my-0">
+        <Title />
+        <a
+          href="https://www.deviniter.site/"
+          target="_blank"
+          className="rounded-xl px-3.5 py-1.5 lg:px-4 lg:py-2.5 w-fit font-semibold lg:font-bold lg:text-lg border-2 text-pink-dark dark:text-pink lg:hover:text-white border-pink-dark dark:border-pink lg:hover:bg-pink-dark dark:lg:hover:bg-pink transition-all duration-150 ease-linear"
+        >
+          Learn More
+        </a>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {useCases.map((useCase, index) => {
+            const { title, description, icon } = useCase;
+            return (
+              <UseCaseCard
+                key={index}
+                title={title}
+                description={description}
+                icon={icon}
               />
-            </a>
-          </p>
-          <div className="flex flex-col gap-y-2.5 px-5 lg:px-0">
-            <p className="text-xl lg:text-3xl font-bold">Tech Stacks:</p>
-            <ul className="list-disc">
-              <li>
-                <a
-                  href={"https://vite.dev/"}
-                  target="_blank"
-                  className="text-primary font-semibold lg:hover:text-secondary"
-                >
-                  Vite
-                </a>{" "}
-                - v5
-              </li>
-              <li>
-                <a
-                  href={"https://www.typescriptlang.org/"}
-                  target="_blank"
-                  className="text-primary font-semibold lg:hover:text-secondary"
-                >
-                  TypeScript
-                </a>{" "}
-                - v5
-              </li>
-              <li>
-                <a
-                  href={"https://react.dev/"}
-                  target="_blank"
-                  className="text-primary font-semibold lg:hover:text-secondary"
-                >
-                  React
-                </a>{" "}
-                - v18
-              </li>
-              <li>
-                <a
-                  href={"https://tailwindcss.com/"}
-                  target="_blank"
-                  className="text-primary font-semibold lg:hover:text-secondary"
-                >
-                  TailwindCSS
-                </a>{" "}
-                - v3
-              </li>
-              <li>
-                <a
-                  href={"https://lucide.dev/"}
-                  target="_blank"
-                  className="text-primary font-semibold lg:hover:text-secondary"
-                >
-                  Lucide React Icon
-                </a>{" "}
-                - v4
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col gap-y-2.5 px-5 lg:px-0">
-            <p className="text-xl lg:text-3xl font-bold">
-              Other Techs & Tools:
-            </p>
-            <ul className="list-disc">
-              <li>
-                <a
-                  href={"https://vitest.dev/"}
-                  target="_blank"
-                  className="text-primary font-semibold lg:hover:text-secondary"
-                >
-                  Vitest
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href={"https://postcss.org/"}
-                  target="_blank"
-                  className="text-primary font-semibold lg:hover:text-secondary"
-                >
-                  PostCSS
-                </a>
-              </li>
-              <li>
-                <a
-                  href={"https://eslint.org/"}
-                  target="_blank"
-                  className="text-primary font-semibold lg:hover:text-secondary"
-                >
-                  ESLint
-                </a>
-              </li>
-            </ul>
-          </div>
+            );
+          })}
         </div>
-      </div>
-      <Footer />
-    </div>
+      </section>
+    </Page>
   );
 }
 
