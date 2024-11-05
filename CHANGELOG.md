@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.0
+
+### Minor Changes
+
+- 4e0945e: Update template's default UI
+
 ## 1.1.10
 
 ### Minor Changes
