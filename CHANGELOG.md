@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.1
+
+### Patch Changes
+
+- 65304b6: Update spaces when installing templates
+
 ## 1.2.0
 
 ### Minor Changes
