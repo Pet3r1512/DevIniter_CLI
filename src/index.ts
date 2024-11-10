@@ -33,13 +33,13 @@ export async function scaffoldTemplate(projectName: string, template: string) {
       `Project ${projectName} created successfully using ${template} template 🚀.\n`
     );
 
-    spinner.info("Now, run: \n");
-    spinner.info("cd " + projectName + "\n");
+    spinner.info(" Now, run: \n");
+    spinner.info(" cd " + projectName + "\n");
     spinner.info(
-      "Then, check for dependencies installation here: https://deviniter.vercel.app/docs/installation#installing-projects-dependencies"
+      " Then, check for dependencies installation here: https://deviniter.vercel.app/docs/installation#installing-projects-dependencies"
     );
   } catch (error) {
-    spinner.fail("Failed to install template.");
+    spinner.fail(" Failed to install template.");
     console.error((error as Error).message);
     throw error;
   }
