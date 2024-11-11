@@ -1,12 +1,9 @@
 {
   "name": "@deviniter/cli",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "bin": {
     "cli": "./dist/index.cjs"
   },
-  "version": "1.2.3",
+  "version": "1.2.1",
   "description": "",
   "main": "dist/index.cjs",
   "module": "dist/index.cjs",
@@ -16,14 +13,13 @@
     "test": "vitest run tests",
     "build": "tsup-node",
     "version": "changeset version",
-    "release": "pnpm run build && changeset publish --registry=https://npm.pkg.github.com/",
+    "release": "pnpm run build && changeset publish",
     "prepublishOnly": "pnpm build",
     "lint": "tsc"
   },
   "author": "Peter Pham",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.4.5",
     "fs-extra": "^11.2.0",
     "inquirer": "^8.0.0",
     "ora": "^8.1.0"
@@ -33,7 +29,7 @@
     "@types/fs-extra": "^11.0.4",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^22.7.7",
-    "tsup": "^8.3.5",
+    "tsup": "^8.3.0",
     "typescript": "^5.6.3",
     "vitest": "^2.1.3"
   },
