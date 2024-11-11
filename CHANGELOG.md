@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.2
+
+### Patch Changes
+
+- 961396c: Fixbugs
+
 ## 1.2.3
 
 ### Patch Changes
