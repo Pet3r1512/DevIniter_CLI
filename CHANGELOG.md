@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.2
+
+### Patch Changes
+
+- 21453aa: Publish package with github action
+
 ## 1.2.1
 
 ### Patch Changes
