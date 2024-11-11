@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.3
+
+### Patch Changes
+
+- dcff8d2: Missing ownership
+
 ## 1.2.2
 
 ### Patch Changes
