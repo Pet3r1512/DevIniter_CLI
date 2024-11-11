@@ -1,5 +1,8 @@
 {
   "name": "@deviniter/cli",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "bin": {
     "cli": "./dist/index.cjs"
   },
@@ -13,7 +16,7 @@
     "test": "vitest run tests",
     "build": "tsup-node",
     "version": "changeset version",
-    "release": "pnpm run build && changeset publish",
+    "release": "pnpm run build && changeset publish --registry=https://npm.pkg.github.com/",
     "prepublishOnly": "pnpm build",
     "lint": "tsc"
   },
