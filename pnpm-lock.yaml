@@ -34,7 +34,7 @@ importers:
         specifier: ^22.7.7
         version: 22.8.1
       tsup:
-        specifier: ^8.3.0
+        specifier: ^8.3.5
         version: 8.3.5(postcss@8.4.47)(typescript@5.6.3)
       typescript:
         specifier: ^5.6.3
