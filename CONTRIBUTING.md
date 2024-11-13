@@ -30,6 +30,12 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 
    - Write clean, documented code
    - Follow the existing code style and conventions
+   - Remember below command and test <strong>dist/index.cjs</storng> often:
+
+   ```bash
+   npm run dev # or yarn dev or pnpm dev
+   ```
+
    - Add tests if applicable
 
 4. **Commit Your Changes**
@@ -63,7 +69,7 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 
 2. Run tests:
    ```bash
-   npm test  # or yarn test or pnpm test
+   npm run test  # or yarn test or pnpm test
    ```
 
 ## Pull Request Guidelines
