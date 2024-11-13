@@ -13,6 +13,10 @@ For this contributing document, you will contribute for DevIniter's CLI:
 
 By participating in this project, you agree to abide by our Code of Conduct. Please read it before contributing.
 
+## Project Structure
+
+You can check this [document](https://github.com/Pet3r1512/DevIniter_CLI/blob/master/PROJECT_STRUCTURE.md) for a visual of DevIniter's CLI structure.
+
 ## How to Contribute
 
 1. **Fork the Repository**
