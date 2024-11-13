@@ -15,9 +15,9 @@
     <a href="https://deviniter.site/docs/introduction"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Pet3r1512/DevIniter/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/Pet3r1512/DevIniter_CLI/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/Pet3r1512/DevIniter/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/Pet3r1512/DevIniter_CLI/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -86,14 +86,6 @@ This project exists thanks to all the people who contribute. [[Contribute](CONTR
 ## License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/Pet3r1512/DevIniter_CLI/blob/feature/contributing-docs/FEAT-007/LICENSE) for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## Report bugs
-
-I am very appreciate when you report problems and bugs when using DevIniter so we can fix and enhance this product!!!
-
-[Report Bugs](https://github.com/Pet3r1512/DevIniter/issues/new?labels=bug&template=bug-report---.md)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
