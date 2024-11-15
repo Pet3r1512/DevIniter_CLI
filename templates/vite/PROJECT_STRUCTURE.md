@@ -7,15 +7,12 @@ This Vite + React.js project follows a structured organization that emphasizes:
 - **Modern Build System**: Leveraging Vite's lightning-fast HMR and build optimization
 - **Modular Architecture**: Clear separation of concerns with components organized by functionality
 - **UI Component Management**:
-  - Segregated third-party components (Shadcn, Aceternity)
+  - Segregated third-party components (Shadcn)
   - Consistent theming and layout system
 - **Asset Organization**: Optimized static asset management in the public directory
-- **State Management**: Efficient global state handling using Zustand stores
 - **Custom Hooks**: Reusable logic extraction through custom React hooks
 - **Type Safety**: Full TypeScript implementation throughout the project
 - **Testing Infrastructure**: Comprehensive testing setup with Vitest
-
-Let me know if you'd like any adjustments to this documentation!
 
 ## Directory Structure
 

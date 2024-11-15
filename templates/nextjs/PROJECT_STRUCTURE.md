@@ -6,10 +6,9 @@ This Next.js project follows a structured organization that emphasizes:
 
 - **Modular Architecture**: Clear separation of concerns with components organized by functionality
 - **UI Component Management**:
-  - Segregated third-party components (Shadcn, Aceternity)
+  - Segregated third-party components (Shadcn)
   - Consistent theming and layout system
 - **Asset Organization**: Optimized static asset management in the public directory
-- **State Management**: Efficient global state handling using Zustand stores
 - **Custom Hooks**: Reusable logic extraction through custom React hooks
 - **Type Safety**: Full TypeScript implementation throughout the project
 - **Testing Infrastructure**: Comprehensive testing setup with Vitest
