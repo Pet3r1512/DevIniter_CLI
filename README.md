@@ -21,7 +21,7 @@
   </p>
 </div>
 
-- ⚡ Start your project within under 20 seconds
+- ⚡ Start your project within under 60 seconds
 - ⚙️ Rich technologies and tools
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
