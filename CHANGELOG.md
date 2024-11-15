@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.3
+
+### Patch Changes
+
+- f456efb: Add template's project structure documents
+
 ## 1.2.2
 
 ### Patch Changes
