@@ -14,8 +14,6 @@ This Next.js project follows a structured organization that emphasizes:
 - **Type Safety**: Full TypeScript implementation throughout the project
 - **Testing Infrastructure**: Comprehensive testing setup with Vitest
 
-Let me know if you'd like any adjustments to this documentation!
-
 ## Directory Structure
 
     .
