@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.4
+
+### Patch Changes
+
+- 148abc2: Husky + Prettier added
+
 ## 1.2.3
 
 ### Patch Changes
