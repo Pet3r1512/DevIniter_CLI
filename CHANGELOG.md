@@ -12,18 +12,6 @@
 
 - 961396c: Fixbugs
 
-## 1.2.3
-
-### Patch Changes
-
-- dcff8d2: Missing ownership
-
-## 1.2.2
-
-### Patch Changes
-
-- 21453aa: Publish package with github action
-
 ## 1.2.1
 
 ### Patch Changes
