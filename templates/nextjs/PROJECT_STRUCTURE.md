@@ -59,7 +59,7 @@ Next.js pages directory for routing:
 - `_document.tsx`: Custom Document component for HTML structure
 - `index.tsx`: Homepage of the application
 
-### /prisma
+### prisma/
 
 Database layer:
 
