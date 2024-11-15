@@ -1,4 +1,4 @@
-import ThemeToggle from "@/components/Langs/ThemeToggle";
+import ThemeToggle from "@/components/Theme/ThemeToggle";
 import Link from "next/link";
 import Sidebar from "../Sidebar";
 
