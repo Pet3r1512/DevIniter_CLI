@@ -29,11 +29,12 @@
 ## Built With
 
 - TypeScript
+- Execa
+- Ora
+- Inquirer
 - Tsup
 - Vitest
 - Changeset
-- Inquirer
-- Ora
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
