@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 
-const inquirer = require("inquirer");
+import inquirer from "inquirer";
 import path from "node:path";
 import { scanTemplates } from "./scan_templates.js";
 import { checkAllowToInstall } from "./check_allow_to_install.js";
 import fs from "fs-extra";
+import { installDependencies } from "./install_dependencies.js";
+import ora from "ora";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 export const templateDirectory = path.resolve(__dirname, "../templates");
 
 export async function scaffoldTemplate(projectName: string, template: string) {
-  const { default: ora } = await import("ora");
-
   const projectPath = path.join(process.cwd(), projectName);
   const templatePath = path.join(templateDirectory, template);
   const packageJsonPath = path.join(projectPath, "package.json");
@@ -20,7 +20,7 @@ export async function scaffoldTemplate(projectName: string, template: string) {
     throw new Error(`Template ${template} does not exist.`);
   }
 
-  const spinner = ora("Installing template...").start();
+  const spinner = ora("Scaffolding template...").start();
 
   try {
     fs.copySync(templatePath, projectPath);
@@ -33,11 +33,8 @@ export async function scaffoldTemplate(projectName: string, template: string) {
       `Project ${projectName} created successfully using ${template} template 🚀.\n`
     );
 
-    spinner.info(" Now, run: \n");
-    spinner.info(" cd " + projectName + "\n");
-    spinner.info(
-      " Then, check for dependencies installation here: https://deviniter.vercel.app/docs/installation#installing-projects-dependencies"
-    );
+    spinner.start();
+    await installDependencies(spinner, projectPath, { silent: true });
   } catch (error) {
     spinner.fail(" Failed to install template.");
     console.error((error as Error).message);
