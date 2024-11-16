@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.5
+
+### Patch Changes
+
+- 558d4ca: Pre-install template's dependencies with execa
+
 ## 1.2.4
 
 ### Patch Changes
