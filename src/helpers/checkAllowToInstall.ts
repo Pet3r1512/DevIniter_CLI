@@ -1,6 +1,7 @@
 import inquirer from "inquirer";
 import path from "node:path";
 import fs from "fs-extra";
+import ora from "ora";
 
 export async function checkAllowToInstall(answers: {
   projectName: string;
@@ -31,7 +32,9 @@ export async function checkAllowToInstall(answers: {
   }
 
   if (action === "remove") {
+    const spinner = ora("Removing all files...").start();
     fs.emptyDirSync(projectPath);
+    spinner.succeed("All files are removed!\n");
   }
 
   return true;

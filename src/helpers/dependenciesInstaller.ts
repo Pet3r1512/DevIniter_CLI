@@ -1,7 +1,7 @@
 import { execa } from "execa";
 import fs from "fs";
 import path from "path";
-import { getPackageManager } from "./helpers/getPackageManager";
+import { getPackageManager } from "./getPackageManager";
 import { Ora } from "ora";
 
 /**
@@ -12,6 +12,7 @@ import { Ora } from "ora";
 export async function installDependencies(
   spinner: Ora,
   projectPath: string,
+  projectName: string,
   options: { silent: boolean }
 ): Promise<void> {
   const packageManager = getPackageManager();
@@ -24,7 +25,6 @@ export async function installDependencies(
   // Change to the project directory
   try {
     process.chdir(projectPath);
-    spinner.succeed("Directory is changed");
   } catch (err) {
     spinner.fail("Fail to change directory");
   }
@@ -32,6 +32,9 @@ export async function installDependencies(
   // Check if package.json exists
   if (!fs.existsSync(path.join(projectPath, "package.json"))) {
     spinner.fail("Failed to install dependencies");
+    console.log(
+      "You can report this fail at: https://github.com/Pet3r1512/DevIniter_CLI/issues/new?template=bug-report---.md"
+    );
   }
 
   spinner.start(`📦 Installing dependencies using ${packageManager}...`);
@@ -47,9 +50,14 @@ export async function installDependencies(
       stdio: "pipe",
       env: process.env,
     });
-    spinner.succeed("Dependencies installed successfully!");
-    spinner.text = "Happy coding!";
+    spinner.succeed("Dependencies installed successfully!\n");
+    spinner.info(`Now, cd ${projectName}\n`);
+    spinner.info(`${packageManager} run dev\n`);
+    spinner.succeed("Happy coding!");
   } catch (error: any) {
     spinner.fail("Failed to install dependencies");
+    console.log(
+      "You can report this fail at: https://github.com/Pet3r1512/DevIniter_CLI/issues/new?template=bug-report---.md"
+    );
   }
 }
