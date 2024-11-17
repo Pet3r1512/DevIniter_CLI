@@ -2,11 +2,11 @@
 
 import inquirer from "inquirer";
 import path from "node:path";
-import { scanTemplates } from "./scan_templates.js";
-import { checkAllowToInstall } from "./check_allow_to_install.js";
+import { scanTemplates } from "./helpers/templatesScanner.js";
 import fs from "fs-extra";
-import { installDependencies } from "./install_dependencies.js";
 import ora from "ora";
+import { checkAllowToInstall } from "./helpers/checkAllowToInstall.js";
+import { installDependencies } from "./helpers/dependenciesInstaller.js";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 export const templateDirectory = path.resolve(__dirname, "../templates");
@@ -34,7 +34,9 @@ export async function scaffoldTemplate(projectName: string, template: string) {
     );
 
     spinner.start();
-    await installDependencies(spinner, projectPath, { silent: true });
+    await installDependencies(spinner, projectPath, projectName, {
+      silent: true,
+    });
   } catch (error) {
     spinner.fail(" Failed to install template.");
     console.error((error as Error).message);
