@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { scanTemplates } from "../src/scan_templates";
+import { scanTemplates } from "../src/helpers/templatesScanner";
 
 describe("Scan template", () => {
   it("should scan the template directory", () => {
