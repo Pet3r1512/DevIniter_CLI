@@ -39,8 +39,8 @@ export async function installDependencies(
 
   spinner.start(`📦 Installing dependencies using ${packageManager}...`);
   const installCommand = {
-    npm: ["install", "--legacy-peer-deps"],
-    pnpm: ["install", "--no-strict-peer-dependencies"],
+    npm: ["install"],
+    pnpm: ["install"],
   }[packageManager];
 
   try {
