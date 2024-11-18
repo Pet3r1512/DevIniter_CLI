@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.9
+
+### Patch Changes
+
+- 162146a: Downgrade to react v18 for vite template
+
 ## 1.2.8
 
 ### Patch Changes
