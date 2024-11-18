@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.7
+
+### Patch Changes
+
+- 2383a91: Uninstall prisma from nextjs template
+
 ## 1.2.6
 
 ### Patch Changes
