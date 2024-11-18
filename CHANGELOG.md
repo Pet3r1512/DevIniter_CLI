@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.8
+
+### Patch Changes
+
+- 130ec14: Downgrade to next v14 and react v18
+
 ## 1.2.7
 
 ### Patch Changes
