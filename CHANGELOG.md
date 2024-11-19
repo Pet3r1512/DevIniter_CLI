@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.10
+
+### Patch Changes
+
+- 891e26b: Remove turbopack from nextjs v15
+
 ## 1.2.9
 
 ### Patch Changes
