@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.11
+
+### Patch Changes
+
+- e2509dc: Install lint-staged for nextjs template
+
 ## 1.2.10
 
 ### Patch Changes
