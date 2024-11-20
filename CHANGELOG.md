@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.12
+
+### Patch Changes
+
+- 1dccc7f: Allow users to choose to install Prisma or not when scaffold nextjs template
+
 ## 1.2.11
 
 ### Patch Changes
