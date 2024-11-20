@@ -4,10 +4,17 @@ import inquirer from "inquirer";
 import path from "node:path";
 import { scanTemplates } from "./helpers/templatesScanner.js";
 import { checkAllowToInstall } from "./helpers/checkAllowToInstall.js";
-import { scaffoldTemplate } from "./helpers/scaffoldTemplate.js";
+import {
+  ScaffoldOptions,
+  scaffoldTemplate,
+} from "./helpers/scaffoldTemplate.js";
 
 const DEFAULT_TEMPLATES = ["nextjs", "vite"];
 export const templateDirectory = path.resolve(__dirname, "../templates");
+
+let scaffoldOptions: ScaffoldOptions = {
+  prisma: false,
+};
 
 export async function init() {
   try {
@@ -31,6 +38,17 @@ export async function init() {
       throw new Error("No answers received from inquirer prompt.");
     }
 
+    if (answers.template === "nextjs") {
+      const answer = await inquirer.prompt([
+        {
+          type: "confirm",
+          name: "prisma",
+          message: "Would you prefer to install Prisma? ",
+          default: true,
+        },
+      ]);
+      scaffoldOptions.prisma = answer.prisma;
+    }
     const { projectName, template } = answers;
     const isAllowToInstall = await checkAllowToInstall(answers);
 
@@ -38,7 +56,11 @@ export async function init() {
       throw new Error("Directory is not empty.");
     }
 
-    await scaffoldTemplate(projectName, template.toLowerCase());
+    await scaffoldTemplate(
+      projectName,
+      template.toLowerCase(),
+      scaffoldOptions
+    );
   } catch (error) {
     console.error("Error during initialization: ", (error as Error).message);
     throw error;
