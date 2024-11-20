@@ -3,8 +3,17 @@ import ora from "ora";
 import path from "path";
 import { templateDirectory } from "..";
 import { installDependencies } from "./dependenciesInstaller";
+import prismaInstaller from "../installers/nextjs/prisma";
 
-export async function scaffoldTemplate(projectName: string, template: string) {
+export type ScaffoldOptions = {
+  prisma: boolean;
+};
+
+export async function scaffoldTemplate(
+  projectName: string,
+  template: string,
+  scaffoldOptions?: ScaffoldOptions
+) {
   const projectPath = path.join(process.cwd(), projectName);
   const templatePath = path.join(templateDirectory, template);
   const packageJsonPath = path.join(projectPath, "package.json");
@@ -26,10 +35,18 @@ export async function scaffoldTemplate(projectName: string, template: string) {
       `Project ${projectName} created successfully using ${template} template 🚀.\n`
     );
 
+    if (scaffoldOptions?.prisma === true) {
+      await prismaInstaller(packageJsonPath);
+    }
+
     spinner.start();
-    await installDependencies(spinner, projectPath, projectName, {
-      silent: true,
-    });
+    await installDependencies(
+      spinner,
+      projectPath,
+      projectName,
+      { silent: true },
+      scaffoldOptions
+    );
   } catch (error) {
     spinner.fail(" Failed to install template.");
     console.error((error as Error).message);
