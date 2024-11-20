@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.13
+
+### Patch Changes
+
+- 625105f: Hotfix: use js instead of cjs
+
 ## 1.2.12
 
 ### Patch Changes
