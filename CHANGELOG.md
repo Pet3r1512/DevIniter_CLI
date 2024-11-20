@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.14
+
+### Patch Changes
+
+- c7cc00c: Fix different package's name and compiled file's name
+
 ## 1.2.13
 
 ### Patch Changes
