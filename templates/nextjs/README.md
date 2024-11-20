@@ -26,5 +26,6 @@
 - TailwindCSS
 - Shadcn/ui
 - Lucide Icons
+- Prisma (optional)
 
 [product-screenshot]: public/screenshot.png
