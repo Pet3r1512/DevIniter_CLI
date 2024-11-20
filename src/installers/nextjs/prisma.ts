@@ -27,7 +27,8 @@ export default async function prismaInstaller(packageJsonPath: string) {
     );
 
     return true;
-  } catch (error) {
+  } catch (error: any) {
+    console.error(`Failed to update package.json: ${error.message}`);
     return false;
   }
 }
