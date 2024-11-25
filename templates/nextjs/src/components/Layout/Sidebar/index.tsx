@@ -1,9 +1,5 @@
 import ThemeToggle from "@/components/Theme/ThemeToggle";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTrigger,
-} from "@/components/shadcn/ui/drawer";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 
