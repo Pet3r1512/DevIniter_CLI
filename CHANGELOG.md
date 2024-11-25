@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.15
+
+### Patch Changes
+
+- 137be26: Update Shadcn's installation folder
+
 ## 1.2.14
 
 ### Patch Changes
