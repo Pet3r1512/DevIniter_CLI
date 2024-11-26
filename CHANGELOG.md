@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.16
+
+### Patch Changes
+
+- 10ef4d6: Upgrade nextjs template to next15
+
 ## 1.2.15
 
 ### Patch Changes
