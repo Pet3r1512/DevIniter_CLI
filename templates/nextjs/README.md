@@ -21,8 +21,8 @@
 
 ### Built With
 
-- NextJS (Page Router)
-- React
+- NextJS (Page Router) - v15
+- React - v18
 - TailwindCSS
 - Shadcn/ui
 - Lucide Icons
