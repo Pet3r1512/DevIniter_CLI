@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.17
+
+### Patch Changes
+
+- 647571b: Update template structure docs and remove deprecated package
+
 ## 1.2.16
 
 ### Patch Changes
