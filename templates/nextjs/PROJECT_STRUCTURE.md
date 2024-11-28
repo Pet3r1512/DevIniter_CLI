@@ -28,7 +28,7 @@ This Next.js project follows a structured organization that emphasizes:
     │   │   └── ui/                 # Shadcn's components
     │   ├── hooks/                  # Custom React hooks for shared functionality.
     │   ├── lib/                    # Helper functions and utility code.
-    │   ├── styles                  # Global css styles
+    │   ├── styles/                 # Global css styles
     ├── PROJECT_STRUCTURE           # Project's structure document
     ├── .gitignore                  # GIT ignore patterns for dependencies, builds, and env files
     ├── components.json             # Config for Shadcn
