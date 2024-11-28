@@ -1,10 +1,10 @@
-# Vite - React.js Project Structure
+# Next.js Project Structure
 
 ## Overview
 
-This Vite + React.js project follows a structured organization that emphasizes:
+This Next.js project follows a structured organization that emphasizes:
 
-- **Modern Build System**: Leveraging Vite's lightning-fast HMR and build optimization
+- **File-based Routing**: Utilizing Next.js's built-in routing based on the file system
 - **Modular Architecture**: Clear separation of concerns with components organized by functionality
 - **UI Component Management**:
   - Segregated third-party components (Shadcn)
@@ -19,25 +19,23 @@ This Vite + React.js project follows a structured organization that emphasizes:
     .
     ├── public/                     # Static assets served directly by the web server.
     ├── src/                        # Contains the main source code of the application.
+    │   ├── pages/                  # Next.js Pages
+    │   │   ├── _app.tsx            # Custom App component for initializing pages and maintaining layout across the application
+    │   │   ├── document.tsx        # Custom Document component for augmenting the application's HTML and managing global settings
+    │   │   └── index.tsx           # Home page
     │   ├── components/             # React components
     │   │   ├── Layouts/            # Reusable layout components
     │   │   └── ui/                 # Shadcn's components
     │   ├── hooks/                  # Custom React hooks for shared functionality.
-    │   ├── assets/                 # Your project's assets
     │   ├── lib/                    # Helper functions and utility code.
-    │   ├── app.tsx                 # Root React component of the application
-    │   ├── main.tsx                # Entry point that renders the React app
-    │   ├── index.css               # Global styles and CSS reset
-    │   ├── vite-env.d.ts           # TypeScript declarations for Vite environment
-    ├── index.html                  # HTML entry point for the application
+    │   ├── styles/                 # Global css styles
     ├── PROJECT_STRUCTURE           # Project's structure document
     ├── .gitignore                  # GIT ignore patterns for dependencies, builds, and env files
     ├── components.json             # Config for Shadcn
-    ├── package.json                # Project config, dependencies managment and scripts
+    ├── package.json                # Project config, dependencies management and scripts
     ├── tailwind.config.ts          # Config for Tailwind
     ├── postcss.config.mjs          # Config for PostCSS
     ├── setupTests.ts               # Additional config for testing
-    ├── vite.config.ts              # Config for Vite
     ├── vitest.config.ts            # Config for Vitest
     ├── tsconfig.json               # Config for Typescript
     └── README.md
@@ -46,10 +44,9 @@ This Vite + React.js project follows a structured organization that emphasizes:
 
 ### components/
 
-React components organized by function:
+Next.js app directory for file-based routing:
 
-- `Layouts/`: Reusable layout components
-- `ui/`: Shadcn's components
+- `Layout/Page.tsx`: Page layout component
 
 ## File Naming Conventions
 
