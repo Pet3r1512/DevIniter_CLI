@@ -36,12 +36,10 @@ This Vite + React.js project follows a structured organization that emphasizes:
     ├── package.json                # Project config, dependencies managment and scripts
     ├── tailwind.config.ts          # Config for Tailwind
     ├── postcss.config.mjs          # Config for PostCSS
-    ├── next.config.mts             # Config for Nextjs
     ├── setupTests.ts               # Additional config for testing
     ├── vite.config.ts              # Config for Vite
     ├── vitest.config.ts            # Config for Vitest
     ├── tsconfig.json               # Config for Typescript
-    ├── theme.config.tsx            # Config for customized Nextra
     └── README.md
 
 ## Key Directories
