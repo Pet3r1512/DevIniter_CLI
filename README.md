@@ -57,8 +57,10 @@ Until now, DevIniter provides 2 templates: Next.js - Page Router and Vite - Reac
 Ensure you have the following tools installed on your system:
 
 - Nodejs (v20.0.0 or higher)
-- pnpm (v9.0.0 or higher)
+
 - npm (v10.0.0 or higher)
+- pnpm (v9.0.0 or higher)
+- yearn (v4.0.0 or higher)
 
 <strong>Note</strong>: We are actively working to expand support for additional Node.js versions and package managers such as Yarn.
 
