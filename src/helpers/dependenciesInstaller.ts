@@ -51,6 +51,16 @@ export async function installDependencies(
     yarn: ["install"]
   }[packageManager];
 
+  if (packageManager === "yarn") {
+    try {
+      await execa("yarn", ["init"], { cwd: projectPath, stdio: "inherit", options: options, env: process.env })
+      spinner.succeed("Yarn initialized successfully!\n")
+    }
+    catch (error) {
+      spinner.fail("Fail to init Yarn")
+    }
+  }
+
   try {
     await execa(packageManager, installCommand, {
       cwd: projectPath,
