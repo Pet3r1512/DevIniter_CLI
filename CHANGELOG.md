@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.18
+
+### Patch Changes
+
+- b532ccb: Support installation via Yarn now
+
 ## 1.2.17
 
 ### Patch Changes
