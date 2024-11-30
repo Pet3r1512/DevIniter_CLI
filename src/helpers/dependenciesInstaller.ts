@@ -48,6 +48,7 @@ export async function installDependencies(
   const installCommand = {
     npm: ["install"],
     pnpm: ["install"],
+    yarn: ["install"]
   }[packageManager];
 
   try {
