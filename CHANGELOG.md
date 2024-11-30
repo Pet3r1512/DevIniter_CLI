@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.2.19
+
+### Patch Changes
+
+- beb8e35: Downgrade to yarn v4.0.0
+
 ## 1.2.18
 
 ### Patch Changes
