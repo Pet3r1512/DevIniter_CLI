@@ -66,10 +66,17 @@ Ensure you have the following tools installed on your system:
 
 Installing your favorite template by running:
 
+- Using npm:
+
 ```bash
   npx @deviniter/cli@latest
 ```
 
+- Using pnpm
+
+```bash
+  pnpm dlx @deviniter/cli@latest
+```
 
 - Using yarn (new)
 
