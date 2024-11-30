@@ -80,7 +80,7 @@ Installing your favorite template by running:
   pnpm dlx @deviniter/cli@latest
 ```
 
-- Using yarn (new)
+- Using yarn (beta)
 
 ```bash
   yarn dlx @deviniter/cli@latest
