@@ -70,6 +70,13 @@ Installing your favorite template by running:
   npx @deviniter/cli@latest
 ```
 
+
+- Using yarn (new)
+
+```bash
+  yarn dlx @deviniter/cli@latest
+```
+
 _For more examples, please refer to the [Documentation](https://www.deviniter.site/docs/introduction)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
