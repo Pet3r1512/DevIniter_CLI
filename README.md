@@ -60,7 +60,7 @@ Ensure you have the following tools installed on your system:
 
 - npm (v10.0.0 or higher)
 - pnpm (v9.0.0 or higher)
-- yarn (v4.0.0 or higher)
+- yarn (v4.0.0)
 
 <strong>Note</strong>: We are actively working to expand support for additional Node.js versions and package managers such as Bun.
 
