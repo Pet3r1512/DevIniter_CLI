@@ -1,5 +1,11 @@
 # deviniter
 
+## 1.3.0
+
+### Minor Changes
+
+- c0f5475: Release new template: Vitestack
+
 ## 1.2.19
 
 ### Patch Changes
