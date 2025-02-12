@@ -9,7 +9,7 @@ import {
   scaffoldTemplate,
 } from "./helpers/scaffoldTemplate.js";
 
-const DEFAULT_TEMPLATES = ["nextjs", "vite"];
+const DEFAULT_TEMPLATES = ["nextjs", "vite", "vitestack"];
 export const templateDirectory = path.resolve(__dirname, "../templates");
 
 let scaffoldOptions: ScaffoldOptions = {
