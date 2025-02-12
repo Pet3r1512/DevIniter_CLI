@@ -10,39 +10,39 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   const useCases = [
     {
-      title: "Lightning-Fast Development",
+      title: "Build High-Performance Frontend Apps",
       description:
-        "Leverage Vite’s ultra-fast HMR and build speed to rapidly develop and iterate on your projects.",
+        "Develop modern and optimized frontend applications using Vite’s fast build system and React’s component-based architecture.",
       icon: "⚡",
     },
     {
-      title: "Scalable React Applications",
+      title: "Develop Scalable Web Applications",
       description:
-        "Build scalable and maintainable React applications with TanStack's powerful state and data management tools.",
+        "Create scalable, maintainable React applications with TanStack's powerful routing and state management solutions.",
       icon: "📈",
     },
     {
-      title: "Reusable UI Components",
+      title: "Dynamic and Data-Driven Interfaces",
       description:
-        "Create and maintain a library of reusable components to enhance consistency and productivity.",
-      icon: "📦",
-    },
-    {
-      title: "Data-Driven Solutions",
-      description:
-        "Fetch, cache, and manage data efficiently using TanStack Query, ensuring optimal performance.",
+        "Leverage TanStack Query for efficient data fetching, caching, and state synchronization in dynamic web applications.",
       icon: "🔄",
     },
     {
-      title: "Reliable Testing Setup",
+      title: "Component-Driven UI Development",
       description:
-        "Enhance code quality with a pre-configured testing environment tailored for React applications.",
+        "Build and manage reusable, composable UI components to streamline your development workflow.",
+      icon: "📦",
+    },
+    {
+      title: "Reliable Testing and Debugging",
+      description:
+        "Ensure code quality and stability with a pre-configured testing setup, making debugging and maintenance easier.",
       icon: "🧪",
     },
     {
-      title: "Optimized Performance",
+      title: "Optimized Performance for Production",
       description:
-        "Utilize Vite’s modern bundling and code-splitting features to maximize application performance.",
+        "Utilize Vite’s advanced bundling, code-splitting, and lazy-loading features to deliver highly performant applications.",
       icon: "🚀",
     },
   ];
