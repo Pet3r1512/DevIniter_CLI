@@ -6,9 +6,9 @@ export default function Title() {
         VITE - REACT.JS - TYPESCRIPT
       </p>
       <p className="font-normal text-sm md:text-base">
-        A modern, production-ready Next.js starter template featuring
-        TypeScript, Tailwind CSS, and Shadcn/UI components. Built for rapid
-        development with best practices and essential tooling pre-configured.
+        A modern, production-ready Vite starter template featuring TypeScript,
+        Tailwind CSS, and Shadcn/UI components. Built for rapid development with
+        best practices and essential tooling pre-configured.
       </p>
     </div>
   );
